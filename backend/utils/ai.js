@@ -24,9 +24,7 @@ IMPORTANT:
 Repeat: Do not wrap your output in markdown or code fences.`,
   });
 
-  // the following send a prompt to the ticketAgent and get its response.
-  const response =
-    await ticketAgent.run(`You are a ticket agent. Only return a strict JSON object with no extra text, headers, or markdown.
+  const prompt = `You are a ticket agent. Only return a strict JSON object with no extra text, headers, or markdown.
 
     Analyze the following support ticket and provide a JSON object with:
 
@@ -49,9 +47,11 @@ Respond ONLY in this JSON format and do not include any other text or markdown i
 Ticket information:
 
 - Title: ${ticket.title}
-- Description: ${ticket.description}`);
+- Description: ${ticket.description}`;
+  // the following send a prompt to the ticketAgent and get its response.
+  const response = await ticketAgent.run(prompt);
 
-  const raw = response.output[0].context;
+  const raw = response.output[0].content;
 
   try {
     const match = raw.match(/```json\s*([\s\S]*?)\s*```/i);

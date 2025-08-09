@@ -67,7 +67,7 @@ export const onTicketCreated = inngest.createFunction(
         return user;
       });
 
-      await setp.run("send-email-notification", async () => {
+      await step.run("send-email-notification", async () => {
         if (moderator) {
           const assigentTicket = await Ticket.findById(ticket._id);
           await sendMail(
@@ -79,7 +79,7 @@ export const onTicketCreated = inngest.createFunction(
       });
       return { success: true };
     } catch (error) {
-      console.error("❌ Error running the step", err.message);
+      console.error("❌ Error running the step", error.message);
       return { success: false };
     }
   }

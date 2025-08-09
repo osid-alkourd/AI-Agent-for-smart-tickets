@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
-import { inngest } from "../services/inngest/client";
+import { inngest } from "../services/inngest/client.js";
 
 export const signup = async (req, res) => {
   const { email, password, skills = [] } = req.body;
@@ -30,7 +30,7 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = User.findOne({ email });
+    const user = await User.findOne({ email });
     if (!user) return res.status(401).json({ error: "invalid credential" });
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch)
