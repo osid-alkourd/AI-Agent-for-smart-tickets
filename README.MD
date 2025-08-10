@@ -40,7 +40,7 @@ This section showcases some of the main screens in the application.
 
 ### 📝 Create New Ticket Form 
 
-This form allows users to create a new support ticket by entering details such as the title, description, priority, deadline, and related skills.
+This form allows users to create a new support ticket by title and description
 
 ![Create Ticket Form](https://res.cloudinary.com/dh2wbcdah/image/upload/v1754832908/Screenshot_765_yt8j2d.png)
 
