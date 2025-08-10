@@ -40,8 +40,7 @@ This section showcases some of the main screens in the application.
 
 ### 📝 Create New Ticket Form 
 
-This form allows users to create a new support ticket by title and description
-
+The form allows the user to create a ticket, where the user enters the ticket title (the issue or inquiry title) and the description (a description of the issue or inquiry).
 ![Create Ticket Form](https://res.cloudinary.com/dh2wbcdah/image/upload/v1754832908/Screenshot_765_yt8j2d.png)
 
 ---
